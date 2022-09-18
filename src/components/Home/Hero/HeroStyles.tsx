@@ -5,6 +5,7 @@ export const useStyles = createStyles((theme) => ({
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
+        marginTop: "110px",
     },
 
     content: {
@@ -57,6 +58,7 @@ export const useStyles = createStyles((theme) => ({
                       color: "blue",
                   }).hover,
         borderRadius: theme.radius.sm,
-        padding: "4px 20px",
+        padding: "4px 10px",
+        margin: "0px 5px",
     },
 }));

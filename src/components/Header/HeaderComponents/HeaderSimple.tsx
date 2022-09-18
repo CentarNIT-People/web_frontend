@@ -21,7 +21,7 @@ export function HeaderSimple({ links }: HeaderSimpleProps) {
     ));
 
     return (
-        <Header height={60} mb={110}>
+        <Header height={60}>
             <Container className={classes.header}>
                 <HeaderLogo />
                 <Group spacing={5} className={classes.links}>

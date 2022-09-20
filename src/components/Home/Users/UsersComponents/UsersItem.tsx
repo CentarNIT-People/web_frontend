@@ -1,25 +1,29 @@
-import { Avatar, Text, Button, Paper } from "@mantine/core";
+import { Avatar, Text, Paper, Space } from "@mantine/core";
+import { UserSkills } from "./ItemSkills";
 import { useStyles } from "./UsersItemStyles";
-
 interface UserInfoActionProps {
     avatar: string;
     name: string;
     email: string;
     job: string;
+    skills: any;
 }
 
-export function UsersItem({ name, email, job, avatar }: UserInfoActionProps) {
+export function UsersItem(props: UserInfoActionProps) {
+    console.log(props.skills);
     const { classes } = useStyles();
     return (
         <Paper withBorder className={classes.item}>
-            <Avatar src={avatar} className={classes.avatar} color="blue" />
-            <Text className={classes.name}>{name}</Text>
+            <Avatar
+                src={props.avatar}
+                className={classes.avatar}
+                color="blue"
+            />
+            <Text className={classes.name}>{props.name}</Text>
             <Text className={classes.desc}>
-                {email} • {job}
+                {props.email} <Space /> {props.job}
             </Text>
-            <Button variant="default" fullWidth mt="md">
-                Send message
-            </Button>
+            <UserSkills skills={props.skills} />
         </Paper>
     );
 }

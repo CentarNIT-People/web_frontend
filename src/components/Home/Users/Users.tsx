@@ -17,6 +17,7 @@ export const Users = () => {
                             avatar=""
                             email={item.email}
                             job="Full Stack Developer"
+                            skills={item.languages}
                         />
                     );
                 })}

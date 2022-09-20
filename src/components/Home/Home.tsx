@@ -1,12 +1,13 @@
 import { Hero } from "./Hero/Hero";
-import { Layout } from "../Layout/Layout";
 import { Users } from "./Users/Users";
 
 export const Home = () => {
     return (
-        <Layout>
+        <div
+            style={{ display: "flex", flexDirection: "column", width: "100%" }}
+        >
             <Hero />
             <Users />
-        </Layout>
+        </div>
     );
 };

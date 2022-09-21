@@ -1,12 +1,16 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AppNavbar } from "./Navbar/Navbar";
 import { Home } from "./Home/Home";
+import { Header } from "./Header/Header";
+import { useStyles } from "./Home/HomeStyles";
 
 export const AppRoutes = () => {
+    const { classes } = useStyles();
     return (
         <BrowserRouter>
-            <div style={{ display: "flex" }}>
+            <div className={classes.app}>
                 <AppNavbar />
+                <Header />
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/users" element={<h1>Users</h1>} />

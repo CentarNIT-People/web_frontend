@@ -12,12 +12,13 @@ export const UserSkills = (props: SkillsInterface) => {
             <Text className={classes.skillstext} size="xs">
                 Top used:
             </Text>
-            <Space h={10} />
+            <Space h={5} />
             <div className={classes.skills}>
                 {props.skills.length > 0 &&
                     props.skills.map((item: any) => {
                         return (
                             <RingProgress
+                                key={item.language}
                                 size={70}
                                 thickness={5}
                                 roundCaps

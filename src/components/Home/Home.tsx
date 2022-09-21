@@ -1,11 +1,11 @@
 import { Hero } from "./Hero/Hero";
+import { useStyles } from "./HomeStyles";
 import { Users } from "./Users/Users";
 
 export const Home = () => {
+    const { classes } = useStyles();
     return (
-        <div
-            style={{ display: "flex", flexDirection: "column", width: "100%" }}
-        >
+        <div className={classes.home}>
             <Hero />
             <Users />
         </div>

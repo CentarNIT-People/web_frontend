@@ -1,10 +1,9 @@
 import { UsersItem } from "./UsersComponents/UsersItem";
 import { useStyles } from "./UsersStyles";
-import { useData } from "../../hooks/useData";
+import { useData } from "../../../hooks/useData";
 
 export const Users = () => {
     const { data } = useData({ category: "users" });
-    console.log(data);
 
     const { classes } = useStyles();
     return (
@@ -13,6 +12,7 @@ export const Users = () => {
                 data.map((item) => {
                     return (
                         <UsersItem
+                            key={item.key}
                             name={item.full_name}
                             avatar=""
                             email={item.email}

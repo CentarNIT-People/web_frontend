@@ -16,7 +16,7 @@ export const App = () => {
     const toggleColorScheme = (value?: ColorScheme) =>
         setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
 
-    useHotkeys([["mod+J", () => toggleColorScheme()]]);
+    useHotkeys([["shift+T", () => toggleColorScheme()]]);
     return (
         <ColorSchemeProvider
             colorScheme={colorScheme}

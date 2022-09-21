@@ -12,7 +12,12 @@ export function AppNavbar() {
     const [active, setActive] = useState(useLocation().pathname);
 
     const links = data.map((item) => (
-        <NavbarItem active={active} setActive={setActive} item={item} />
+        <NavbarItem
+            active={active}
+            setActive={setActive}
+            item={item}
+            key={item.label}
+        />
     ));
 
     return (

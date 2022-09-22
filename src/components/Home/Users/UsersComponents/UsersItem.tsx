@@ -2,18 +2,17 @@ import { Avatar, Text, Paper, Space, Button, Image } from "@mantine/core";
 import { UserSkills } from "./ItemSkills";
 import { useStyles } from "./UsersItemStyles";
 interface UserInfoActionProps {
-  avatar: string;
-  name: string;
-  email: string;
-  job: string;
-  skills: any;
-  flag: string;
-  city: string;
-  country: string;
+    avatar: string;
+    name: string;
+    email: string;
+    job: string;
+    skills: any;
+    flag: string;
+    city: string;
+    country: string;
 }
 
 export function UsersItem(props: UserInfoActionProps) {
-<<<<<<< HEAD
     const { classes } = useStyles();
     return (
         <Paper withBorder className={classes.item}>
@@ -38,27 +37,4 @@ export function UsersItem(props: UserInfoActionProps) {
             </div>
         </Paper>
     );
-=======
-  const { classes } = useStyles();
-  return (
-    <Paper withBorder className={classes.item}>
-      <Avatar src={props.avatar} className={classes.avatar} color="blue" />
-      <Text className={classes.name}>{props.name}</Text>
-      <Text className={classes.desc}>
-        {props.email} <Space /> {props.job}
-      </Text>
-      <UserSkills skills={props.skills} />
-      <Button className={classes.button}>Visit Profile</Button>
-      <div>
-        <Image
-          src={"https://countryflagsapi.com/svg/" + props.flag}
-          width={32}
-          mt={20}
-        />
-        {/* <Text>{props.country}</Text>
-                <Text>{props.city}</Text> */}
-      </div>
-    </Paper>
-  );
->>>>>>> d8c1daf1e1761740380810444ccc8c231392fea2
 }

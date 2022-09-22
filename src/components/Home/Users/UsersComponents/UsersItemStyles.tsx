@@ -63,4 +63,11 @@ export const useStyles = createStyles((theme) => ({
         marginTop: 20,
         width: "100%",
     },
+    info: {
+        display: "flex",
+        width: "100%",
+        justifyContent: "space-evenly",
+        alignItems: "center",
+        marginTop: 20,
+    },
 }));

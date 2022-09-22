@@ -13,25 +13,27 @@ interface UserInfoActionProps {
 }
 
 export function UsersItem(props: UserInfoActionProps) {
-  const { classes } = useStyles();
-  return (
-    <Paper withBorder className={classes.item}>
-      <Avatar src={props.avatar} className={classes.avatar} color="blue" />
-      <Text className={classes.name}>{props.name}</Text>
-      <Text className={classes.desc}>
-        {props.email} <Space /> {props.job}
-      </Text>
-      <UserSkills skills={props.skills} />
-      <Button className={classes.button}>Visit Profile</Button>
-      <div>
-        <Image
-          src={"https://countryflagsapi.com/svg/" + props.flag}
-          width={32}
-          mt={20}
-        />
-        {/* <Text>{props.country}</Text>
-                <Text>{props.city}</Text> */}
-      </div>
-    </Paper>
-  );
-}
+    const { classes } = useStyles();
+    return (
+        <Paper withBorder className={classes.item}>
+            <Avatar
+                src={props.avatar}
+                className={classes.avatar}
+                color="blue"
+            />
+            <Text className={classes.name}>{props.name}</Text>
+            <Text className={classes.desc}>
+                {props.email} <Space /> {props.job}
+            </Text>
+            <UserSkills skills={props.skills} />
+            <Button className={classes.button}>Visit Profile</Button>
+            <div className={classes.info}>
+                <Image
+                    src={"https://countryflagsapi.com/svg/" + props.flag}
+                    width={32}
+                />
+                <Text>{props.country}</Text>
+                <Text>{props.city}</Text>
+            </div>
+        </Paper>
+    );}

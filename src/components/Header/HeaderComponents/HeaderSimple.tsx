@@ -5,7 +5,7 @@ import { useStyles } from "./HeaderStyles";
 import { HeaderItem } from "./HeaderItem";
 import { HeaderLogo } from "./HeaderLogo";
 import { useLocation } from "react-router-dom";
-import { ToggleTheme } from "../ToggleTheme/ToggleTheme";
+import { ToggleTheme } from "../HeaderToggle/HeaderToggle";
 
 interface HeaderSimpleProps {
     links: { link: string; label: string }[];
@@ -21,7 +21,7 @@ export function HeaderSimple({ links }: HeaderSimpleProps) {
     ));
 
     return (
-        <Header height={60}>
+        <Header height={60} mb={10}>
             <Container className={classes.header}>
                 <HeaderLogo />
                 <Group spacing={5} className={classes.links}>

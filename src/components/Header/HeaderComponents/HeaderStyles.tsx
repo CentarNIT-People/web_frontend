@@ -2,19 +2,19 @@ import { createStyles } from "@mantine/core";
 
 export const useStyles = createStyles((theme) => ({
     header: {
-        display: "flex",
-        justifyContent: "space-around",
+        display: "none",
+        justifyContent: "space-between",
         alignItems: "center",
         height: "100%",
         maxWidth: "100%",
-        [theme.fn.smallerThan("md")]: {
-            justifyContent: "space-between",
+        [`@media (max-width: 1000px)`]: {
+            display: "flex",
         },
     },
 
     links: {
         width: "50%",
-        marginRight: "11.5%",
+        marginRight: "12%",
         display: "flex",
         justifyContent: "center",
         [theme.fn.smallerThan("md")]: {

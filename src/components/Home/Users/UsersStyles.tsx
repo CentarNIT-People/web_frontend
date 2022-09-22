@@ -6,8 +6,11 @@ export const useStyles = createStyles((theme) => ({
         width: "100%",
         display: "flex",
         flexWrap: "wrap",
-        padding: "0% 100px",
+        padding: "0% 50px",
         marginBottom: "100px",
         justifyContent: "space-between",
+        [`@media (max-width: 850px)`]: {
+            padding: "0% 30px",
+        },
     },
 }));

@@ -1,4 +1,4 @@
-import { Avatar, Text, Paper, Space, Button } from "@mantine/core";
+import { Avatar, Text, Paper, Space, Button, Image } from "@mantine/core";
 import { UserSkills } from "./ItemSkills";
 import { useStyles } from "./UsersItemStyles";
 interface UserInfoActionProps {
@@ -7,6 +7,9 @@ interface UserInfoActionProps {
     email: string;
     job: string;
     skills: any;
+    flag: string;
+    city: string;
+    country: string;
 }
 
 export function UsersItem(props: UserInfoActionProps) {
@@ -24,6 +27,15 @@ export function UsersItem(props: UserInfoActionProps) {
             </Text>
             <UserSkills skills={props.skills} />
             <Button className={classes.button}>Visit Profile</Button>
+            <div>
+                <Image
+                    src={"https://countryflagsapi.com/svg/" + props.flag}
+                    width={32}
+                    mt={20}
+                />
+                <Text>{props.country}</Text>
+                <Text>{props.city}</Text>
+            </div>
         </Paper>
     );
 }

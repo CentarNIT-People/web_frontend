@@ -18,6 +18,9 @@ export const Users = () => {
                             email={item.email}
                             job="Full Stack Developer"
                             skills={item.languages}
+                            flag={item.flag}
+                            city={item.city}
+                            country={item.country}
                         />
                     );
                 })}

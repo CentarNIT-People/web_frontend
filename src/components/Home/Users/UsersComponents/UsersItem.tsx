@@ -2,14 +2,14 @@ import { Avatar, Text, Paper, Space, Button, Image } from "@mantine/core";
 import { UserSkills } from "./ItemSkills";
 import { useStyles } from "./UsersItemStyles";
 interface UserInfoActionProps {
-    avatar: string;
-    name: string;
-    email: string;
-    job: string;
-    skills: any;
-    flag: string;
-    city: string;
-    country: string;
+  avatar: string;
+  name: string;
+  email: string;
+  job: string;
+  skills: any;
+  flag: string;
+  city: string;
+  country: string;
 }
 
 export function UsersItem(props: UserInfoActionProps) {
@@ -36,5 +36,4 @@ export function UsersItem(props: UserInfoActionProps) {
                 <Text>{props.city}</Text>
             </div>
         </Paper>
-    );
-}
+    );}

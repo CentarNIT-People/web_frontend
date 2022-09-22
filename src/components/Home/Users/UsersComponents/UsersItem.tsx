@@ -28,11 +28,11 @@ export function UsersItem(props: UserInfoActionProps) {
             <UserSkills skills={props.skills} />
             <Button className={classes.button}>Visit Profile</Button>
             <div className={classes.info}>
+                <Text>{props.country}</Text>
                 <Image
                     src={"https://countryflagsapi.com/svg/" + props.flag}
                     width={32}
                 />
-                <Text>{props.country}</Text>
                 <Text>{props.city}</Text>
             </div>
         </Paper>

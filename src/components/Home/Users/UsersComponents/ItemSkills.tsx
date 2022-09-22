@@ -19,7 +19,7 @@ export const UserSkills = (props: SkillsInterface) => {
                         return (
                             <RingProgress
                                 key={item.language}
-                                size={70}
+                                size={90}
                                 thickness={5}
                                 roundCaps
                                 sections={[
@@ -30,7 +30,7 @@ export const UserSkills = (props: SkillsInterface) => {
                                         color="blue"
                                         weight={500}
                                         align="center"
-                                        size={7}
+                                        size={10}
                                     >
                                         {item.language
                                             ? item.language

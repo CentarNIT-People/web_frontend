@@ -68,6 +68,6 @@ export const useStyles = createStyles((theme) => ({
         width: "100%",
         justifyContent: "space-evenly",
         alignItems: "center",
-        marginTop: 20,
+        marginTop: 30,
     },
 }));

@@ -1,12 +1,13 @@
 import { Hero } from "./Hero/Hero";
-import { Layout } from "../Layout/Layout";
+import { useStyles } from "./HomeStyles";
 import { Users } from "./Users/Users";
 
 export const Home = () => {
+    const { classes } = useStyles();
     return (
-        <Layout>
+        <div className={classes.home}>
             <Hero />
             <Users />
-        </Layout>
+        </div>
     );
 };

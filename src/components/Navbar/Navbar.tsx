@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Navbar, Group } from "@mantine/core";
-import { IconSwitchHorizontal, IconLogout } from "@tabler/icons";
 import { ToggleTheme } from "./ToggleTheme/ToggleTheme";
 import { useStyles } from "./NavbarComponents/NavbarStyles";
 import { data } from "./NavbarComponents/NavbarData";
@@ -30,15 +29,7 @@ export function AppNavbar() {
             </Navbar.Section>
 
             <Navbar.Section className={classes.footer}>
-                <a href="/" className={classes.link}>
-                    <IconSwitchHorizontal className={classes.linkIcon} />
-                    <span>Change account</span>
-                </a>
-
-                <a href="/" className={classes.link}>
-                    <IconLogout className={classes.linkIcon} stroke={1.5} />
-                    <span>Logout</span>
-                </a>
+                <></>
             </Navbar.Section>
         </Navbar>
     );

@@ -10,7 +10,6 @@ export const useData = (props: useDataInterface) => {
     useEffect(() => {
         axios.get(`https://orxdmz.deta.dev/${props.category}/`).then((r) => {
             setData(r.data);
-            console.log(r.data);
         });
     }, [props.category]);
     return { data };

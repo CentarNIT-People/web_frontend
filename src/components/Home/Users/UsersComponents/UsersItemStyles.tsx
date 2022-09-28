@@ -7,7 +7,7 @@ export const useStyles = createStyles((theme) => ({
             theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
         padding: theme.spacing.lg,
         borderRadius: theme.radius.md,
-        transition: "all ease-in-out 0.3s",
+        transition: "scale ease-in-out 0.3s",
         margin: "3% 0%",
         [`@media (max-width: 1275px)`]: {
             width: "47%",

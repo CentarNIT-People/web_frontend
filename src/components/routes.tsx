@@ -17,8 +17,8 @@ export const AppRoutes = () => {
                         <Route index element={<Home />} />
                         <Route path=":id" element={<FullPage />} />
                     </Route>
-                    <Route path="/news" element={<h1>Users</h1>} />
-                    <Route path="/projects" element={<h1>Users</h1>} />
+                    <Route path="/news" element={<h1>News</h1>} />
+                    <Route path="/projects" element={<h1>Projects</h1>} />
                 </Routes>
             </div>
         </BrowserRouter>

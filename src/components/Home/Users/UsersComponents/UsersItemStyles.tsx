@@ -7,7 +7,6 @@ export const useStyles = createStyles((theme) => ({
             theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
         padding: theme.spacing.lg,
         borderRadius: theme.radius.md,
-        transition: "scale ease-in-out 0.3s",
         margin: "3% 0%",
         [`@media (max-width: 1275px)`]: {
             width: "47%",
@@ -15,6 +14,8 @@ export const useStyles = createStyles((theme) => ({
         [`@media (max-width: 850px)`]: {
             width: "100%",
             margin: "5% 0%",
+            transition: "scale ease-in-out 0.3s",
+
             "&:hover": {
                 scale: "1.01",
                 cursor: "pointer",

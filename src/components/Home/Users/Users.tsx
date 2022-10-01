@@ -10,7 +10,9 @@ export const Users = () => {
         <div className={classes.wrapper}>
             {data.length > 0 &&
                 data.map((item) => {
-                    return <UsersItem key={item.key} item={item} />;
+                    return item.is_active === true ? (
+                        <UsersItem key={item.key} item={item} />
+                    ) : null;
                 })}
         </div>
     );

@@ -5,6 +5,7 @@ import { useStyles } from "./NavbarComponents/NavbarStyles";
 import { data } from "./NavbarComponents/NavbarData";
 import { NavbarItem } from "./NavbarComponents/NavbarItem";
 import { useLocation } from "react-router-dom";
+import { IconPlus } from "@tabler/icons";
 
 export function AppNavbar() {
     const { classes } = useStyles();
@@ -29,7 +30,10 @@ export function AppNavbar() {
             </Navbar.Section>
 
             <Navbar.Section className={classes.footer}>
-                <></>
+                <a href="/register" className={classes.link}>
+                    <IconPlus className={classes.linkIcon} stroke={1.5} />
+                    <span>Create account</span>
+                </a>
             </Navbar.Section>
         </Navbar>
     );

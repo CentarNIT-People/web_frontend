@@ -95,7 +95,7 @@ export const Register = () => {
                     axios
                         .post("https://centarnit.deta.dev/users/", form.values)
                         .then((r) => {
-                            console.log(r.data);
+                            window.location.assign("/");
                         });
                 }}
             >

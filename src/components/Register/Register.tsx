@@ -1,6 +1,6 @@
 import { useStyles } from "./RegisterStyles";
 import { useForm } from "@mantine/form";
-import { TextInput, NumberInput, Button } from "@mantine/core";
+import { TextInput, NumberInput, Button,PasswordInput } from "@mantine/core";
 import axios from "axios";
 export const Register = () => {
     const { classes } = useStyles();
@@ -12,15 +12,16 @@ export const Register = () => {
             email: "",
             github: "",
             age: "",
-            status: "",
-            is_active: false,
+            job: "",
             // --------------
+            status:"on hold",
             role: "Student",
             avatar: "string",
             languages: ["string"],
             flag: "string",
             country: "string",
             city: "string",
+            is_active: false,
         },
     });
 
@@ -35,7 +36,7 @@ export const Register = () => {
                         size="md"
                         withAsterisk
                     />
-                    <TextInput
+                    <PasswordInput
                         mt={40}
                         label="Password"
                         placeholder="Password"
@@ -66,7 +67,6 @@ export const Register = () => {
                         placeholder="Your age"
                         label="Your age"
                         size="md"
-                        withAsterisk
                         {...form.getInputProps("age")}
                     />
                     <TextInput
@@ -74,7 +74,7 @@ export const Register = () => {
                         withAsterisk
                         label="Job Title"
                         placeholder="Frontend Developer"
-                        {...form.getInputProps("status")}
+                        {...form.getInputProps("job")}
                         size="md"
                     />
                 </div>

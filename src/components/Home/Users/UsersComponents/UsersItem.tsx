@@ -32,14 +32,6 @@ export function UsersItem(props: UserInfoActionProps) {
             >
                 Visit Profile
             </Button>
-            <div className={classes.info}>
-                <Text>{props.item.country}</Text>
-                <Image
-                    src={"https://countryflagsapi.com/svg/" + props.item.flag}
-                    width={32}
-                />
-                <Text>{props.item.city}</Text>
-            </div>
         </Paper>
     );
 }

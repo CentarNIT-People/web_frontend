@@ -8,7 +8,7 @@ export const useStyles = createStyles((theme) => ({
         flexWrap: "wrap",
         padding: "0% 20px",
         marginBottom: "100px",
-        justifyContent: "space-between",
+        justifyContent: "space-evenly",
         [`@media (max-width: 850px)`]: {
             padding: "0% 30px",
         },

@@ -1,4 +1,4 @@
-import { Avatar, Text, Paper, Space, Button, Image } from "@mantine/core";
+import { Avatar, Text, Paper, Space, Button } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
 import { UserSkills } from "./ItemSkills";
 import { useStyles } from "./UsersItemStyles";
@@ -21,7 +21,7 @@ export function UsersItem(props: UserInfoActionProps) {
             />
             <Text className={classes.name}>{props.item.name}</Text>
             <Text className={classes.desc}>
-                {props.item.email} <Space /> {props.item.status}
+                {props.item.email} <Space /> {props.item.job}
             </Text>
             <UserSkills skills={props.item.languages} />
             <Button

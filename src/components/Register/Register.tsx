@@ -1,9 +1,13 @@
 import { useStyles } from "./RegisterStyles";
 import { useForm } from "@mantine/form";
-import { TextInput, NumberInput, Button,PasswordInput } from "@mantine/core";
+import { TextInput, NumberInput, Button,PasswordInput,Notification,Alert} from "@mantine/core";
+import { useState } from "react";
 import axios from "axios";
+import { IconAlertCircle } from "@tabler/icons";
+
 export const Register = () => {
     const { classes } = useStyles();
+    const [success, setSuccess] = useState(null)
     const form = useForm({
         initialValues: {
             username: "",
@@ -27,6 +31,9 @@ export const Register = () => {
 
     return (
         <div className={classes.form}>
+            {success === false && <Alert icon={<IconAlertCircle size={16} />} title="Invalid Credentials" color="red" mb={50} className={classes.alert}>
+      You have not sent valid credentials to the form. Please try again!
+    </Alert>}
             <div className={classes.wrapper}>
                 <div className={classes.child}>
                     <TextInput
@@ -95,12 +102,27 @@ export const Register = () => {
                     axios
                         .post("https://centarnit.deta.dev/users/", form.values)
                         .then((r) => {
-                            window.location.assign("/");
-                        });
+                            setSuccess(true)
+                            setTimeout(()=>{
+                                window.location.assign("/");
+                            },3000)
+                        })
+                        .catch(()=>{
+                            setSuccess(false)
+                });
+
                 }}
+
             >
                 Submit
             </Button>
+            {success === true && <Notification radius="md" title="Successfully created account" className={classes.notify} loading onClose={()=>{
+                setSuccess(false)
+                window.location.assign("/")
+                
+            }}>
+                You are now obligated to freely use the power of this software
+            </Notification>}
         </div>
     );
 };

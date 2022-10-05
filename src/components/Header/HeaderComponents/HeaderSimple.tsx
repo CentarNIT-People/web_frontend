@@ -1,18 +1,17 @@
 import { useState } from "react";
-import { Header, Container, Group, Burger } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
+import { Header, Container, Group} from "@mantine/core";
 import { useStyles } from "./HeaderStyles";
 import { HeaderItem } from "./HeaderItem";
 import { HeaderLogo } from "./HeaderLogo";
 import { useLocation } from "react-router-dom";
 import { ToggleTheme } from "../HeaderToggle/HeaderToggle";
+import { HeaderMenu } from "./HeaderMenu";
 
 interface HeaderSimpleProps {
     links: { link: string; label: string }[];
 }
 
 export function HeaderSimple({ links }: HeaderSimpleProps) {
-    const [opened, { toggle }] = useDisclosure(false);
     const [active, setActive] = useState(useLocation().pathname);
     const { classes } = useStyles();
 
@@ -33,12 +32,7 @@ export function HeaderSimple({ links }: HeaderSimpleProps) {
                     {items}
                 </Group>
                 <ToggleTheme />
-                <Burger
-                    opened={opened}
-                    onClick={toggle}
-                    className={classes.burger}
-                    size="sm"
-                />
+                <HeaderMenu/>
             </Container>
         </Header>
     );

@@ -22,10 +22,6 @@ export const useStyles = createStyles((theme) => ({
         },
     },
 
-    burger: {
-
-    },
-
     link: {
         display: "block",
         lineHeight: 1,

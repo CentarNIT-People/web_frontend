@@ -4,7 +4,6 @@ import { useStyles } from "./HeaderStyles";
 import { HeaderItem } from "./HeaderItem";
 import { HeaderLogo } from "./HeaderLogo";
 import { useLocation } from "react-router-dom";
-import { ToggleTheme } from "../HeaderToggle/HeaderToggle";
 import { HeaderMenu } from "./HeaderMenu";
 
 interface HeaderSimpleProps {
@@ -31,7 +30,6 @@ export function HeaderSimple({ links }: HeaderSimpleProps) {
                 <Group spacing={5} className={classes.links}>
                     {items}
                 </Group>
-                <ToggleTheme />
                 <HeaderMenu/>
             </Container>
         </Header>

@@ -11,9 +11,10 @@ export const useStyles = createStyles((theme) => ({
         [`@media (max-width: 1275px)`]: {
             width: "47%",
         },
-        [`@media (max-width: 850px)`]: {
-            width: "100%",
+        [theme.fn.smallerThan("sm")]: {
+            width: "90%",
             margin: "5% 0%",
+
             transition: "scale ease-in-out 0.3s",
 
             "&:hover": {
@@ -21,12 +22,17 @@ export const useStyles = createStyles((theme) => ({
                 cursor: "pointer",
             },
         },
+
     },
     avatar: {
         borderRadius: 120,
         margin: "auto",
         width: 80,
         height: 80,
+        [theme.fn.smallerThan("md")]: {
+            width:130,
+            height:130
+        },
     },
     name: {
         textAlign: "center",
@@ -58,8 +64,8 @@ export const useStyles = createStyles((theme) => ({
         color: theme.colors.gray[6],
     },
     button: {
-        [`@media (max-width: 850px)`]: {
-            display: "none",
+        [theme.fn.smallerThan("md")]: {
+            display:"none"
         },
         marginTop: 20,
         width: "100%",

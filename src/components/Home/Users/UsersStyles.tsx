@@ -9,8 +9,9 @@ export const useStyles = createStyles((theme) => ({
         padding: "0% 20px",
         marginBottom: "100px",
         justifyContent: "space-evenly",
-        [`@media (max-width: 850px)`]: {
-            padding: "0% 30px",
+        [theme.fn.smallerThan("sm")]: {
+            flexDirection:"column",
+            alignItems:"center"
         },
     },
 }));

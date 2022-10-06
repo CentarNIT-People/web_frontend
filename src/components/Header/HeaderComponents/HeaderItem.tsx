@@ -14,7 +14,7 @@ export const HeaderItem = (props: HeaderItemInterface) => {
             className={cx(classes.link, {
                 [classes.linkActive]: props.active === props.link.link,
             })}
-            onClick={(event) => {
+            onClick={() => {
                 props.setActive(props.link.link);
             }}
         >

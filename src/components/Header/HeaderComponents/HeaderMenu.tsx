@@ -6,9 +6,7 @@ import {
 } from "@tabler/icons";
 import { useDisclosure } from "@mantine/hooks";
 import { useStyles } from "./HeaderStyles";
-import { ToggleTheme } from "../HeaderToggle/HeaderToggle";
-
-
+import { ToggleTheme } from "../../Navbar/ToggleTheme/ToggleTheme";
 
 export const  HeaderMenu=()=> {
     const [opened, { toggle }] = useDisclosure(false);
@@ -23,16 +21,13 @@ export const  HeaderMenu=()=> {
                     size="sm"
                     />
                 </Menu.Target>
-
                 <Menu.Dropdown>
                 <Menu.Label>CentarNIT</Menu.Label>
                 <ToggleTheme/>
-
                 <Menu.Item icon={<IconNews size={14} /> } component="a" href="/">Users</Menu.Item>
                 <Menu.Item icon={<IconNotebook size={14} />} component="a" href="/courses">Courses</Menu.Item>
                 <Menu.Item icon={<IconNews size={14} /> } component="a" href="/news">News</Menu.Item>
                 <Menu.Item icon={<IconAppWindow size={14} />} component="a" href="/projects">Projects</Menu.Item>
-
             </Menu.Dropdown>
             </Menu>
   )

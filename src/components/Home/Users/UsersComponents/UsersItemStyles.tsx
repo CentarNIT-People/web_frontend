@@ -11,8 +11,8 @@ export const useStyles = createStyles((theme) => ({
         [`@media (max-width: 1275px)`]: {
             width: "47%",
         },
-        [theme.fn.smallerThan("sm")]: {
-            width: "90%",
+        [theme.fn.smallerThan("md")]: {
+            width: "70%",
             margin: "5% 0%",
 
             transition: "scale ease-in-out 0.3s",
@@ -56,7 +56,7 @@ export const useStyles = createStyles((theme) => ({
         alignItems: "center",
         marginTop: "20px",
         padding: theme.spacing.xs,
-        [`@media (max-width: 850px)`]: {
+        [theme.fn.smallerThan("md")]: {
             padding: "0% 20%",
         },
     },

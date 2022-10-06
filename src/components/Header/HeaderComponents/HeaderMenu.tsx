@@ -5,20 +5,17 @@ import {
     IconNotebook,
 } from "@tabler/icons";
 import { useDisclosure } from "@mantine/hooks";
-import { useStyles } from "./HeaderStyles";
 import { ToggleTheme } from "../../Navbar/ToggleTheme/ToggleTheme";
 
 export const  HeaderMenu=()=> {
     const [opened, { toggle }] = useDisclosure(false);
-    const {classes} = useStyles()
   return (
     <Menu shadow="md" width={200}>
                 <Menu.Target>
                     <Burger
                     opened={opened}
                     onClick={toggle}
-                    className={classes.burger}
-                    size="sm"
+                    size="lg"
                     />
                 </Menu.Target>
                 <Menu.Dropdown>

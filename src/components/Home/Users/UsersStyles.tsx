@@ -9,7 +9,7 @@ export const useStyles = createStyles((theme) => ({
         padding: "0% 20px",
         marginBottom: "100px",
         justifyContent: "space-evenly",
-        [theme.fn.smallerThan("sm")]: {
+        [theme.fn.smallerThan("md")]: {
             flexDirection:"column",
             alignItems:"center"
         },

@@ -13,10 +13,10 @@ export const Register = () => {
             username: "",
             password: "",
             full_name: "",
-            email: "",
             github: "",
+            email: "",
             age: "",
-            job: "",
+            job: "",           
             // --------------
             status:"on hold",
             role: "Student",

@@ -1,7 +1,11 @@
 import { useStyles } from "./NavbarStyles";
 
+type NavbarLinkType = {
+    link:string, label:string, icon:any
+}
+
 interface NavbarItemInterface {
-    item: any;
+    item: NavbarLinkType;
     active: any;
     setActive: React.Dispatch<React.SetStateAction<string>>;
 }

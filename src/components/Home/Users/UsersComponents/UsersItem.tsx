@@ -2,8 +2,18 @@ import { Avatar, Text, Paper, Space, Button } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
 import { UserSkills } from "./ItemSkills";
 import { useStyles } from "./UsersItemStyles";
+
+type UserInfoType = {
+    username:string,
+    name:string,
+    email:string,
+    job:string,
+    avatar:string,
+    languages:{language:string, percentage:number}[]
+}
+
 interface UserInfoActionProps {
-    item: any;
+    item: UserInfoType;
 }
 
 export function UsersItem(props: UserInfoActionProps) {

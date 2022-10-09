@@ -1,9 +1,15 @@
+import React from "react";
 import { useStyles } from "./HeaderStyles";
 
+type HeaderLinkType = {
+    link:string,
+    label:string
+}
+
 interface HeaderItemInterface {
-    link: any;
-    active: any;
-    setActive: any;
+    link: HeaderLinkType;
+    active: string;
+    setActive: React.Dispatch<React.SetStateAction<string>>;
 }
 export const HeaderItem = (props: HeaderItemInterface) => {
     const { classes, cx } = useStyles();

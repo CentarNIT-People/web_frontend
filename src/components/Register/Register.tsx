@@ -1,6 +1,6 @@
 import { useStyles } from "./RegisterStyles";
 import { useForm } from "@mantine/form";
-import { TextInput, NumberInput, Button,PasswordInput,Notification,Alert} from "@mantine/core";
+import { TextInput, Button,PasswordInput,Notification,Alert} from "@mantine/core";
 import { useState } from "react";
 import axios from "axios";
 import { IconAlertCircle } from "@tabler/icons";
@@ -15,8 +15,8 @@ export const Register = () => {
             full_name: "",
             github: "",
             email: "",
-            age: "",
-            job: "",           
+            job: "",
+            phone_number:"",           
             // --------------
             status:"on hold",
             role: "Student",
@@ -68,13 +68,12 @@ export const Register = () => {
                         size="md"
                         withAsterisk
                     />
-                    <NumberInput
-                        defaultValue={0}
+                    <TextInput
                         mt={40}
-                        placeholder="Your age"
-                        label="Your age"
+                        placeholder="+123 4567890"
+                        label="Your phone number"
                         size="md"
-                        {...form.getInputProps("age")}
+                        {...form.getInputProps("phone_number")}
                     />
                     <TextInput
                         mt={40}
@@ -105,7 +104,7 @@ export const Register = () => {
                             setSuccess(true)
                             setTimeout(()=>{
                                 window.location.assign("/");
-                            },3000)
+                            },2000)
                         })
                         .catch(()=>{
                             setSuccess(false)

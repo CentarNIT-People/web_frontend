@@ -1,14 +1,6 @@
 import { ActionIcon, useMantineColorScheme } from "@mantine/core";
 import { IconSun, IconMoonStars } from "@tabler/icons";
-import { createStyles } from "@mantine/core";
-
-export const useStyles = createStyles((theme) => ({
-    icon: {
-        [theme.fn.smallerThan("xs")]: {
-            display: "none",
-        },
-    },
-}));
+import { useStyles } from "../HeaderComponents/HeaderStyles";
 
 export function ToggleTheme() {
     const { colorScheme, toggleColorScheme } = useMantineColorScheme();

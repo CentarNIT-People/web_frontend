@@ -29,7 +29,7 @@ export function Hero() {
                         </Text>
 
                         <Group mt={30}>
-                            <Anchor href="/">
+                            <Anchor href="/register">
                                 <Button className={classes.control}>
                                     Get started
                                 </Button>

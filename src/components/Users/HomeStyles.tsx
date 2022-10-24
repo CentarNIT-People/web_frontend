@@ -98,4 +98,10 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     //   color: theme.primaryColor,
     // }).background,
   },
+  homeContent: {
+    display: "flex",
+    // flexDirection: "column",
+    flexWrap: "wrap",
+    width: "100%",
+  },
 }));

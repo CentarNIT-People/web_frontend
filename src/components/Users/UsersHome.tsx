@@ -11,6 +11,7 @@ import {
 } from "@tabler/icons";
 import { useData } from "../../hooks/useData";
 import { UsersItem } from "./Users/UsersComponents/UsersItem";
+import { useMediaQuery } from "@mantine/hooks";
 
 export const UsersHome = () => {
   const { data } = useData({ category: "users" });
@@ -20,10 +21,12 @@ export const UsersHome = () => {
   const [searchValue, setSearchValue] = useState("");
   const [selectedUser, setSelctedUser] = useState(null);
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const matches = useMediaQuery("(min-width: 900px)");
   useEffect(() => {
     api.getUsers().then((res) => {
       setFilteredUsers(res);
       setUsers(res);
+      console.log("UE", res);
     });
   }, []);
 
@@ -57,7 +60,7 @@ export const UsersHome = () => {
 
   return (
     // <div className={classes.home}>
-    <>
+    <div className={classes.homeContent}>
       <div className={classes.headerWrapper}>
         <div className={classes.searchWrapper}>
           <Input
@@ -70,75 +73,77 @@ export const UsersHome = () => {
             onChange={(e) => setSearchValue(e.target.value)}
           />
 
-          <Group>
-            <ActionIcon
-              size="lg"
-              component="a"
-              href="https://github.com/CentarNIT-People"
-              target="_blank"
-              sx={(theme) => ({
-                backgroundColor:
-                  theme.colorScheme === "dark"
-                    ? theme.colors.dark[6]
-                    : theme.colors.gray[0],
-                color: theme.colors.blue[4],
-              })}
-            >
-              {colorScheme === "dark" ? (
-                <IconBrandGithub size={18} />
-              ) : (
-                <IconBrandGithub size={18} />
-              )}
-            </ActionIcon>
-            <ActionIcon
-              size="lg"
-              component="a"
-              href="https://twitter.com/centarnit"
-              target="_blank"
-              sx={(theme) => ({
-                backgroundColor:
-                  theme.colorScheme === "dark"
-                    ? theme.colors.dark[6]
-                    : theme.colors.gray[0],
-                color: theme.colors.blue[4],
-              })}
-            >
-              {colorScheme === "dark" ? (
-                <IconBrandTwitter size={18} />
-              ) : (
-                <IconBrandTwitter size={18} />
-              )}
-            </ActionIcon>
-            <ActionIcon
-              onClick={() => toggleColorScheme()}
-              size="lg"
-              sx={(theme) => ({
-                backgroundColor:
-                  theme.colorScheme === "dark"
-                    ? theme.colors.dark[6]
-                    : theme.colors.gray[0],
-                color:
-                  theme.colorScheme === "dark"
-                    ? theme.colors.yellow[5]
-                    : theme.colors.blue[4],
-              })}
-            >
-              {colorScheme === "dark" ? (
-                <IconSun size={18} />
-              ) : (
-                <IconMoonStars size={18} />
-              )}
-            </ActionIcon>
-          </Group>
+          {matches && (
+            <Group>
+              <ActionIcon
+                size="lg"
+                component="a"
+                href="https://github.com/CentarNIT-People"
+                target="_blank"
+                sx={(theme) => ({
+                  backgroundColor:
+                    theme.colorScheme === "dark"
+                      ? theme.colors.dark[6]
+                      : theme.colors.gray[0],
+                  color: theme.colors.blue[4],
+                })}
+              >
+                {colorScheme === "dark" ? (
+                  <IconBrandGithub size={18} />
+                ) : (
+                  <IconBrandGithub size={18} />
+                )}
+              </ActionIcon>
+              <ActionIcon
+                size="lg"
+                component="a"
+                href="https://twitter.com/centarnit"
+                target="_blank"
+                sx={(theme) => ({
+                  backgroundColor:
+                    theme.colorScheme === "dark"
+                      ? theme.colors.dark[6]
+                      : theme.colors.gray[0],
+                  color: theme.colors.blue[4],
+                })}
+              >
+                {colorScheme === "dark" ? (
+                  <IconBrandTwitter size={18} />
+                ) : (
+                  <IconBrandTwitter size={18} />
+                )}
+              </ActionIcon>
+              <ActionIcon
+                onClick={() => toggleColorScheme()}
+                size="lg"
+                sx={(theme) => ({
+                  backgroundColor:
+                    theme.colorScheme === "dark"
+                      ? theme.colors.dark[6]
+                      : theme.colors.gray[0],
+                  color:
+                    theme.colorScheme === "dark"
+                      ? theme.colors.yellow[5]
+                      : theme.colors.blue[4],
+                })}
+              >
+                {colorScheme === "dark" ? (
+                  <IconSun size={18} />
+                ) : (
+                  <IconMoonStars size={18} />
+                )}
+              </ActionIcon>
+            </Group>
+          )}
         </div>
       </div>
-      {/* {data.map((user) =>
-        user.is_active === true ? <UsersItem key={user.id} item={user} /> : null
-      )} */}
-      {data.map((user) => {
-        return <h1>{user.full_name}</h1>;
-      })}
-    </>
+      {users.map((user) =>
+        user.full_name.startsWith(searchValue) ||
+        user.email.startsWith(searchValue) ? (
+          <UsersItem key={user.id} item={user} />
+        ) : null
+      )}
+    </div>
 
     //   <div className={classes.wrapper}>
     //     <div className={classes.selectedUser}>

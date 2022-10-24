@@ -14,10 +14,41 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
       flexDirection: "column",
     },
   },
+  headerWrapper: {
+    display: "flex",
+    justifyContent: "flex-end",
+    alignItems: "center",
+    marginTop: "15px",
+    width: "100%",
+    height: "80px",
+    marginLeft: "20px",
+    border:
+      theme.colorScheme === "light"
+        ? "1px solid #D3D3D3"
+        : `1px solid ${theme.colors.blue[6]}`,
+
+    // opacity: "0.3",
+    borderRadius: "10px 0 0 10px ",
+    // backgroundColor:
+    //   theme.colorScheme === "light"
+    //     ? "rgba(231, 245, 255, 1)"
+    //     : theme.colors.dark[5],
+
+    position: "sticky",
+  },
   searchWrapper: {
-    width: "36%",
+    display: "flex",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    width: "32%",
+    height: "57px",
+    borderRadius: "32px",
+    color: "#228be6",
+    marginTop: "30px",
     marginBottom: "30px",
-    marginRight: "50px",
+    marginRight: "30px",
+    backgroundColor:
+      theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.white,
   },
   avatarImg: {
     width: "50px",
@@ -29,6 +60,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
       background: "whitesmoke",
     },
     height: "60px",
+    cursor: "pointer",
   },
   table: {
     width: "40%",
@@ -57,5 +89,13 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     display: "inline-block",
     marginLeft: "70px",
     fontSize: "25px",
+  },
+  input: {
+    width: "199px",
+    marginLeft: "0",
+    // backgroundColor: theme.fn.variant({
+    //   variant: "light",
+    //   color: theme.primaryColor,
+    // }).background,
   },
 }));

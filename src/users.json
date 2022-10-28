@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "firstName": "Ervin",
+      "lastName": "Kacar",
+      "id": "1",
+      "is_active": true
+    },
+    {
+      "firstName": "Daris",
+      "lastName": "Hodizc",
+      "id": "2",
+      "is_active": true
+    },
+    {
+      "firstName": "Dezal",
+      "lastName": "Kacar",
+      "id": "3",
+      "is_active": true
+    },
+    {
+      "firstName": "Nikola",
+      "lastName": "Kacar",
+      "id": "4",
+      "is_active": true
+    }
+  ]
+}

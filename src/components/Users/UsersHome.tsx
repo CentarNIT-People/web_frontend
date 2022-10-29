@@ -10,16 +10,13 @@ import {
   IconSun,
 } from "@tabler/icons";
 import { UsersItem } from "./Users/UsersComponents/UsersItem";
-import { useMediaQuery } from "@mantine/hooks";
 
 export const UsersHome = () => {
   const { classes } = useStyles();
   const [users, setUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState([]);
   const [searchValue, setSearchValue] = useState("");
-  const [selectedUser, setSelctedUser] = useState(null);
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-  // const matches = useMediaQuery("(min-width: 900px)");
   useEffect(() => {
     api.getUsers().then((res) => {
       setFilteredUsers(res);
@@ -40,7 +37,6 @@ export const UsersHome = () => {
   }, [searchValue]);
 
   return (
-    // <div className={classes.home}>
     <div className={classes.homeContent}>
       <div className={classes.headerWrapper}>
         <div className={classes.searchWrapper}>
@@ -112,11 +108,12 @@ export const UsersHome = () => {
       </div>
       <div className={classes.usersWrapper}>
         {users.map((user) =>
+        user.is_active && (
           user.full_name.startsWith(searchValue) ||
-          user.email.startsWith(searchValue) ? (
+          user.email.startsWith(searchValue) || user.username.startsWith(searchValue) ? (
             <UsersItem key={user.id} item={user} />
           ) : null
-        )}
+        ))}
       </div>
     </div>
   );

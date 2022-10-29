@@ -19,7 +19,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     justifyContent: "flex-end",
     alignItems: "center",
     marginTop: "15px",
-    width: "100%",
+    width: "96.5%",
     height: "80px",
     marginLeft: "20px",
     border:
@@ -27,13 +27,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
         ? "1px solid #D3D3D3"
         : `1px solid ${theme.colors.dark[5]}`,
 
-    // opacity: "0.3",
-    borderRadius: "10px 0 0 10px ",
-    // backgroundColor:
-    //   theme.colorScheme === "light"
-    //     ? "rgba(231, 245, 255, 1)"
-    //     : theme.colors.dark[5],
-
+    borderRadius: "10px",
     position: "sticky",
   },
   searchWrapper: {
@@ -49,6 +43,14 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     marginRight: "30px",
     backgroundColor:
       theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.white,
+    '@media (max-width: 1290px)': {
+      width:"40%",
+      marginLeft:"30px"
+    },
+    '@media (max-width: 800px)': {
+      width:"100%",
+      marginLeft:"30px"
+    },
   },
   avatarImg: {
     width: "50px",
@@ -71,36 +73,16 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     display: "flex",
     justifyContent: "space-between",
   },
-  selectedUser: {
-    width: "40%",
-    height: "500px",
-    marginLeft: "20px",
-    borderRadius: "13px",
-    boxShadow: "1px 1px 10px 3px whitesmoke",
-    padding: "25px",
-  },
-  selectedAvatar: {
-    width: "100px",
-    height: "100px",
-    borderRadius: "50%",
-    marginLeft: "10px",
-  },
-  selectedFullname: {
-    display: "inline-block",
-    marginLeft: "70px",
-    fontSize: "25px",
-  },
   input: {
     width: "199px",
-    marginLeft: "0",
-    // backgroundColor: theme.fn.variant({
-    //   variant: "light",
-    //   color: theme.primaryColor,
-    // }).background,
+    marginLeft: "10px",
+    marginRight:"10px",
+    '@media (max-width: 800px)': {
+      width:"100%"
+  },
   },
   homeContent: {
     display: "flex",
-    // flexDirection: "column",
     flexDirection: "column",
     flexWrap: "wrap",
     width: "100%",
@@ -112,4 +94,8 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     justifyContent: "center",
     marginTop: "15px",
   },
+  headerIcons:{
+    width:"50%",
+    display:"flex"
+  }
 }));

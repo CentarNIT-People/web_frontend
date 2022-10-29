@@ -19,7 +19,7 @@ export const UsersHome = () => {
   const [searchValue, setSearchValue] = useState("");
   const [selectedUser, setSelctedUser] = useState(null);
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-  const matches = useMediaQuery("(min-width: 900px)");
+  // const matches = useMediaQuery("(min-width: 900px)");
   useEffect(() => {
     api.getUsers().then((res) => {
       setFilteredUsers(res);
@@ -54,8 +54,8 @@ export const UsersHome = () => {
             onChange={(e) => setSearchValue(e.target.value)}
           />
 
-          {matches && (
-            <Group style={{ width: "135px" }}>
+          {
+            <Group className={classes.headerIcons}>
               <ActionIcon
                 size="lg"
                 component="a"
@@ -69,11 +69,7 @@ export const UsersHome = () => {
                   color: theme.colors.blue[4],
                 })}
               >
-                {colorScheme === "dark" ? (
                   <IconBrandGithub size={18} />
-                ) : (
-                  <IconBrandGithub size={18} />
-                )}
               </ActionIcon>
               <ActionIcon
                 size="lg"
@@ -88,11 +84,7 @@ export const UsersHome = () => {
                   color: theme.colors.blue[4],
                 })}
               >
-                {colorScheme === "dark" ? (
                   <IconBrandTwitter size={18} />
-                ) : (
-                  <IconBrandTwitter size={18} />
-                )}
               </ActionIcon>
               <ActionIcon
                 onClick={() => toggleColorScheme()}
@@ -115,7 +107,7 @@ export const UsersHome = () => {
                 )}
               </ActionIcon>
             </Group>
-          )}
+          }
         </div>
       </div>
       <div className={classes.usersWrapper}>

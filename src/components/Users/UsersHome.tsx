@@ -9,12 +9,10 @@ import {
   IconSearch,
   IconSun,
 } from "@tabler/icons";
-import { useData } from "../../hooks/useData";
 import { UsersItem } from "./Users/UsersComponents/UsersItem";
 import { useMediaQuery } from "@mantine/hooks";
 
 export const UsersHome = () => {
-  const { data } = useData({ category: "users" });
   const { classes } = useStyles();
   const [users, setUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState([]);
@@ -41,23 +39,6 @@ export const UsersHome = () => {
     setFilteredUsers(searchedUser);
   }, [searchValue]);
 
-  // const rows = filteredUsers.map((user) => (
-  //   <tr
-  //     key={user.firstName}
-  //     className={classes.userRow}
-  //     style={{
-  //       background: selectedUser?.full_name === user?.full_name && "whitesmoke",
-  //     }}
-  //     onClick={() => setSelctedUser(user)}
-  //   >
-  //     <td>
-  //       <img src={user.avatar} className={classes.avatarImg} />
-  //     </td>
-  //     <td>{user.full_name}</td>
-  //     <td>{user.email}</td>
-  //   </tr>
-  // ));
-
   return (
     // <div className={classes.home}>
     <div className={classes.homeContent}>
@@ -74,7 +55,7 @@ export const UsersHome = () => {
           />
 
           {matches && (
-            <Group>
+            <Group style={{ width: "135px" }}>
               <ActionIcon
                 size="lg"
                 component="a"
@@ -137,44 +118,14 @@ export const UsersHome = () => {
           )}
         </div>
       </div>
-      {users.map((user) =>
-        user.full_name.startsWith(searchValue) ||
-        user.email.startsWith(searchValue) ? (
-          <UsersItem key={user.id} item={user} />
-        ) : null
-      )}
+      <div className={classes.usersWrapper}>
+        {users.map((user) =>
+          user.full_name.startsWith(searchValue) ||
+          user.email.startsWith(searchValue) ? (
+            <UsersItem key={user.id} item={user} />
+          ) : null
+        )}
+      </div>
     </div>
-
-    //   <div className={classes.wrapper}>
-    //     <div className={classes.selectedUser}>
-    //       <img src={selectedUser?.avatar} className={classes.selectedAvatar} />
-    //       <h2 className={classes.selectedFullname}>
-    //         {selectedUser?.full_name}
-    //       </h2>
-    //       <h3 style={{ textAlign: "center", margin: "35px 0 " }}>
-    //         {selectedUser?.job}
-    //       </h3>
-    //       <h3 style={{ textAlign: "center", margin: "35px 0 " }}>
-    //         {selectedUser?.phone_number}
-    //       </h3>
-    //       <h3 style={{ textAlign: "center", margin: "35px 0 " }}>
-    //         {selectedUser?.email}
-    //       </h3>
-    //       <h3 style={{ textAlign: "center", margin: "35px 0 " }}>
-    //         {selectedUser?.github}
-    //       </h3>
-    //     </div>
-    //     <Table className={classes.table}>
-    //       <thead>
-    //         <tr>
-    //           <th>Image</th>
-    //           <th>Fullname</th>
-    //           <th>Email</th>
-    //         </tr>
-    //       </thead>
-    //       <tbody>{rows}</tbody>
-    //     </Table>
-    //   </div>
-    // </div>
   );
 };

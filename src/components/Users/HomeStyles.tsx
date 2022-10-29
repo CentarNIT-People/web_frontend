@@ -25,7 +25,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     border:
       theme.colorScheme === "light"
         ? "1px solid #D3D3D3"
-        : `1px solid ${theme.colors.blue[6]}`,
+        : `1px solid ${theme.colors.dark[5]}`,
 
     // opacity: "0.3",
     borderRadius: "10px 0 0 10px ",
@@ -101,7 +101,15 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
   homeContent: {
     display: "flex",
     // flexDirection: "column",
+    flexDirection: "column",
     flexWrap: "wrap",
     width: "100%",
+  },
+  usersWrapper: {
+    display: "flex",
+    flexWrap: "wrap",
+    width: "100%",
+    justifyContent: "center",
+    marginTop: "15px",
   },
 }));

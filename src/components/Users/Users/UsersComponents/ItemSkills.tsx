@@ -22,12 +22,12 @@ export const UserSkills = (props: SkillsInterface) => {
                 size={75}
                 thickness={5}
                 roundCaps
-                sections={[{ value: item.percentage, color: "blue" }]}
+                sections={[{ value: item.percentage, color: item.color }]}
                 label={
-                  <Text color="blue" weight={500} align="center" size={7}>
+                  <Text color={item.color} weight={500} align="center" size={7}>
                     {item.language ? item.language : "Undefined"}
                     <Space />
-                    <Text color="blue" weight={800} align="center" size={10}>
+                    <Text color={item.color} weight={800} align="center" size={10}>
                       {item.percentage}%
                     </Text>
                   </Text>

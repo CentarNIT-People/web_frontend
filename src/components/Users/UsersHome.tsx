@@ -14,12 +14,12 @@ import { UsersItem } from "./Users/UsersComponents/UsersItem";
 export const UsersHome = () => {
   const { classes } = useStyles();
   const [users, setUsers] = useState([]);
-  const [filteredUsers, setFilteredUsers] = useState([]);
+  const filteredUsers = [];
   const [searchValue, setSearchValue] = useState("");
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   useEffect(() => {
     api.getUsers().then((res) => {
-      setFilteredUsers(res);
+      filteredUsers.push(res)
       setUsers(res);
       console.log("UE", res);
     });
@@ -33,7 +33,7 @@ export const UsersHome = () => {
           ?.startsWith(searchValue?.toLowerCase()) ||
         user?.email?.toLowerCase()?.startsWith(searchValue?.toLowerCase())
     );
-    setFilteredUsers(searchedUser);
+    filteredUsers.push(searchedUser)
   }, [searchValue]);
 
   return (

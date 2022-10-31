@@ -11,7 +11,12 @@ const CardIcons = () => {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
 
   return (
-    <Group style={{ width: "150px", textAlign: "center" }}>
+    <Group
+      style={{
+        width: "150px",
+        textAlign: "center",
+      }}
+    >
       <ActionIcon
         size="lg"
         component="a"

@@ -77,4 +77,15 @@ export const useStyles = createStyles((theme) => ({
     alignItems: "center",
     marginTop: 30,
   },
+  skillsWrapper: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    height: "41%",
+  },
+  skillsTitle: {
+    color: "#FF0000",
+    marginTop: "50px",
+  },
 }));

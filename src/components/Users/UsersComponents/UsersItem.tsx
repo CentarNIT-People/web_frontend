@@ -1,6 +1,5 @@
-import { Avatar, Text, Paper, Space, Button } from "@mantine/core";
+import { Avatar, Text, Paper, Space } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
-import CardIcons from "../../../../icons/CardIcons";
 import { UserSkills } from "./ItemSkills";
 import { useStyles } from "./UsersItemStyles";
 
@@ -22,25 +21,16 @@ export function UsersItem(props: UserInfoActionProps) {
   const { classes } = useStyles();
   const navigate = useNavigate();
   const handleClick = (username: string) => {
-    navigate(`/${username}`, { state: { item: props.item } });
+    navigate(`/users/${username}`, { state: { item: props.item } });
   };
   return (
-    <Paper withBorder className={classes.item}>
+    <Paper withBorder className={classes.item} onClick={()=>handleClick(props.item.username)}>
       <Avatar src={props.item.avatar} className={classes.avatar} color="blue" />
       <Text className={classes.name}>{props.item.name}</Text>
       <Text className={classes.desc}>
         {props.item.full_name} <Space /> {props.item.job}
       </Text>
       <UserSkills skills={props.item.languages} />
-      {/* <CardIcons /> */}
-      <Button
-        className={classes.button}
-        onClick={() => {
-          handleClick(props.item.username);
-        }}
-      >
-        Visit Profile
-      </Button>
     </Paper>
   );
 }

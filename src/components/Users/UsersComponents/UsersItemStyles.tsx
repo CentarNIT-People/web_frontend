@@ -3,7 +3,7 @@ import { createStyles } from "@mantine/core";
 export const useStyles = createStyles((theme) => ({
   item: {
     width: "20%",
-    height: "380px",
+    height: "310px",
     backgroundColor:
       theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
     padding: theme.spacing.lg,

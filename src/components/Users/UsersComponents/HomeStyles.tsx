@@ -34,7 +34,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     display: "flex",
     justifyContent: "space-evenly",
     alignItems: "center",
-    width: "32%",
+    width: "40%",
     height: "57px",
     borderRadius: "32px",
     color: "#228be6",
@@ -42,7 +42,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     marginBottom: "30px",
     marginRight: "30px",
     backgroundColor:
-      theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.white,
+      theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[0],
     '@media (max-width: 1290px)': {
       width:"40%",
       marginLeft:"30px"
@@ -74,7 +74,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     justifyContent: "space-between",
   },
   input: {
-    width: "199px",
+    width: "50%",
     marginLeft: "10px",
     marginRight:"10px",
     '@media (max-width: 800px)': {
@@ -96,6 +96,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
   },
   headerIcons:{
     width:"50%",
+    justifyContent:"center",
     display:"flex"
   }
 }));

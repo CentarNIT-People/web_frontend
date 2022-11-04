@@ -1,9 +1,9 @@
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import { AppNavbar } from "./Navbar/Navbar";
-import { UsersHome } from "./Users/UsersHome";
+import { UsersHome } from "./Users/Users";
 import { Header } from "./Header/Header";
-import { useStyles } from "./Users/HomeStyles";
-import { FullPage } from "./Users/Users/FullPageComponents/FullPage";
+import { useStyles } from "./Users/UsersComponents/HomeStyles";
+import { FullPage } from "./Users/FullPageComponents/FullPage";
 import { Register } from "./Register/Register";
 
 export const AppRoutes = () => {
@@ -16,7 +16,6 @@ export const AppRoutes = () => {
         <Routes>
           <Route path="/users" element={<Outlet />}>
             <Route index element={<UsersHome />} />
-
             <Route path=":id" element={<FullPage />} />
           </Route>
           <Route path="/courses" element={<h1>Courses</h1>} />

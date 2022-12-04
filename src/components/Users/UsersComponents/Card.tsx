@@ -7,6 +7,7 @@ import {
   Text,
   Avatar,
 } from "@mantine/core";
+import React from "react";
 import { IconHeart, IconBookmark, IconShare } from "@tabler/icons";
 
 const useStyles = createStyles((theme) => ({

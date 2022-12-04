@@ -1,5 +1,7 @@
-import { RingProgress, Text, Space, Paper } from "@mantine/core";
+import React from "react";
 import { useStyles } from "./UsersItemStyles";
+import { RingProgress, Text, Space, Paper } from "@mantine/core";
+
 
 interface SkillsInterface {
   skills: { language: string; percentage: number }[];

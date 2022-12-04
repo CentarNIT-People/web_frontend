@@ -1,5 +1,7 @@
-import { Anchor, Button } from "@mantine/core";
+import React from "react";
 import { useStyles } from "./HeaderStyles";
+import { Anchor, Button } from "@mantine/core";
+
 
 export const HeaderLogo = () => {
     const { classes } = useStyles();

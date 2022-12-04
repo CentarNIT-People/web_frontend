@@ -3,8 +3,10 @@ import {
     ColorScheme,
     ColorSchemeProvider,
 } from "@mantine/core";
-import { useHotkeys, useLocalStorage } from "@mantine/hooks";
+import React from "react";
 import { AppRoutes } from "./routes";
+import { useHotkeys, useLocalStorage } from "@mantine/hooks";
+
 
 export const App = () => {
     const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({

@@ -1,7 +1,8 @@
+
 import { useStyles } from "./RegisterStyles";
 import { useForm } from "@mantine/form";
 import { TextInput, Button,PasswordInput,Notification,Alert} from "@mantine/core";
-import { useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { IconAlertCircle } from "@tabler/icons";
 

@@ -3,6 +3,7 @@ import {
     IconBrandLinkedin,
     IconBrandTwitter,
   } from "@tabler/icons";
+import React from "react";
 import { ActionIcon, Group } from "@mantine/core";
 import { useStyles } from "./HomeStyles";
 

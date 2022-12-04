@@ -1,3 +1,4 @@
+import React from "react";
 import { Image } from "@mantine/core";
 import { useLocation } from "react-router-dom";
 

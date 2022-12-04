@@ -9,6 +9,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     alignItems: "flex-end",
   },
   app: {
+    width: "100vw",
     display: "flex",
     [`@media (max-width: 1000px)`]: {
       flexDirection: "column",
@@ -44,18 +45,13 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     backgroundColor:
       theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[0],
     '@media (max-width: 1290px)': {
-      width:"40%",
+      width:"100%",
       marginLeft:"30px"
     },
     '@media (max-width: 800px)': {
       width:"100%",
       marginLeft:"30px"
     },
-  },
-  avatarImg: {
-    width: "50px",
-    height: "50px",
-    borderRadius: "50%",
   },
   userRow: {
     ":hover": {
@@ -74,7 +70,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     justifyContent: "space-between",
   },
   input: {
-    width: "50%",
+    width: "90%",
     marginLeft: "10px",
     marginRight:"10px",
     '@media (max-width: 800px)': {
@@ -91,12 +87,15 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     display: "flex",
     flexWrap: "wrap",
     width: "100%",
-    justifyContent: "center",
+    justifyContent: "space-evenly",
     marginTop: "15px",
   },
   headerIcons:{
     width:"50%",
-    justifyContent:"center",
-    display:"flex"
+    justifyContent:"space-evenly",
+    display:"flex",
+    '@media (max-width: 800px)': {
+      display:"none",
+    },
   }
 }));

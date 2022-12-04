@@ -6,7 +6,7 @@ type NavbarLinkType = {
 
 interface NavbarItemInterface {
     item: NavbarLinkType;
-    active: any;
+    active: string;
     setActive: React.Dispatch<React.SetStateAction<string>>;
 }
 

@@ -2,7 +2,13 @@ import { RingProgress, Text, Space, Paper } from "@mantine/core";
 import { useStyles } from "./UsersItemStyles";
 
 interface SkillsInterface {
-  skills: any;
+  skills: { language: string; percentage: number }[];
+}
+
+interface SkillsItem {
+  language: string;
+  percentage: number;
+  color: string;
 }
 
 export const UserSkills = (props: SkillsInterface) => {
@@ -15,7 +21,7 @@ export const UserSkills = (props: SkillsInterface) => {
       <Space h={5} />
       <div className={classes.skills}>
         {props.skills.length > 0 &&
-          props.skills.map((item: any) => {
+          props.skills.map((item: SkillsItem ) => {
             return (
               <RingProgress
                 key={item.language}

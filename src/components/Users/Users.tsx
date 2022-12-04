@@ -1,5 +1,5 @@
 import {Input } from "@mantine/core";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useStyles } from "./UsersComponents/HomeStyles";
 import { IconSearch } from "@tabler/icons";
 import { UsersItem } from "./UsersComponents/UsersItem";
@@ -35,7 +35,7 @@ export const UsersHome = () => {
             radius="xl"
             size="md"
             value={searchValue}
-            onChange={(e:any) => setSearchValue(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchValue(e.target.value)}
           />
           <UsersHeaderIcons/>
         </div>

@@ -1,10 +1,10 @@
-import { useState } from "react";
 import { Navbar } from "@mantine/core";
-import { useStyles } from "./NavbarComponents/NavbarStyles";
+import React, { useState } from "react";
+import { IconPlus } from "@tabler/icons";
+import { useLocation } from "react-router-dom";
 import { data } from "./NavbarComponents/NavbarData";
 import { NavbarItem } from "./NavbarComponents/NavbarItem";
-import { useLocation } from "react-router-dom";
-import { IconPlus } from "@tabler/icons";
+import { useStyles } from "./NavbarComponents/NavbarStyles";
 import { SegmentedToggle } from "./ToggleTheme/SegmentedToggle";
 
 export function AppNavbar() {

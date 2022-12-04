@@ -1,9 +1,10 @@
-import { Burger,Menu } from "@mantine/core";
 import {
     IconNews,
     IconAppWindow,
     IconNotebook,
 } from "@tabler/icons";
+import React from "react";
+import { Burger,Menu } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { ToggleTheme } from "../../Navbar/ToggleTheme/ToggleTheme";
 

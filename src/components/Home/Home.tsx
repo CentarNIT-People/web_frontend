@@ -7,6 +7,7 @@ import {
     Image,
     Anchor,
 } from "@mantine/core";
+import React from "react";
 import { useStyles } from "./HomeStyles";
 
 export function Home() {

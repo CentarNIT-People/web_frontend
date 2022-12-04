@@ -1,10 +1,11 @@
-import { useState } from "react";
-import { Header, Container, Group} from "@mantine/core";
-import { useStyles } from "./HeaderStyles";
+import React, { useState } from "react";
 import { HeaderItem } from "./HeaderItem";
 import { HeaderLogo } from "./HeaderLogo";
-import { useLocation } from "react-router-dom";
 import { HeaderMenu } from "./HeaderMenu";
+import { useStyles } from "./HeaderStyles";
+import { useLocation } from "react-router-dom";
+import { Header, Container, Group} from "@mantine/core";
+
 
 interface HeaderSimpleProps {
     links: { link: string; label: string }[];

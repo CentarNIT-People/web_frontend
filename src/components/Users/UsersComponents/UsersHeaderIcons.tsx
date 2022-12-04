@@ -1,18 +1,17 @@
 import {
     IconBrandGithub,
+    IconBrandLinkedin,
     IconBrandTwitter,
-    IconMoonStars,
-    IconSun,
   } from "@tabler/icons";
-import { ActionIcon, Group, useMantineColorScheme } from "@mantine/core";
+import { ActionIcon, Group } from "@mantine/core";
 import { useStyles } from "./HomeStyles";
 
 
 export const UsersHeaderIcons = () => {
-    const { colorScheme, toggleColorScheme } = useMantineColorScheme()
     const icons = [
         {"link":"https://twitter.com/centarnit", "icon":IconBrandTwitter},
-        {"link":"https://github.com/CentarNIT-People", "icon":IconBrandGithub}
+        {"link":"https://github.com/CentarNIT-People", "icon":IconBrandGithub},
+        {"link":"https://www.linkedin.com/company/centarnit/", "icon":IconBrandLinkedin},
     ]
     const {classes} = useStyles()
 
@@ -37,25 +36,5 @@ export const UsersHeaderIcons = () => {
                     <item.icon size={18} />
                 </ActionIcon>
             })}
-            <ActionIcon
-                onClick={() => toggleColorScheme()}
-                size="lg"
-                sx={(theme) => ({
-                    backgroundColor:
-                        theme.colorScheme === "dark"
-                        ? theme.colors.dark[6]
-                        : theme.colors.gray[0],
-                    color:
-                        theme.colorScheme === "dark"
-                        ? theme.colors.yellow[5]
-                        : theme.colors.blue[4],
-                })}
-                >
-                {colorScheme === "dark" ? (
-                    <IconSun size={18} />
-                    ) : (
-                    <IconMoonStars size={18} />
-                )}
-            </ActionIcon>
     </Group>    
 )}

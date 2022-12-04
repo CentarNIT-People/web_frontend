@@ -3,6 +3,13 @@ import { createStyles } from "@mantine/core";
 export const useStyles = createStyles((theme, _params, getRef) => {
     const icon = getRef("icon");
     return {
+        items: {
+            borderTop: `1px solid ${
+                theme.colorScheme === "dark"
+                    ? theme.colors.dark[4]
+                    : theme.colors.gray[2]
+            }`,
+        },
         wrapper: {
             position: "sticky",
             top: 0,

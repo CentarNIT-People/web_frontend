@@ -15,11 +15,9 @@ export const useStyles = createStyles((theme) => ({
     transition: "scale 0.3s ease",
     margin: "2% 2%",
     [`@media (max-width: 1275px)`]: {
-      width: "47%",
-    },
-    [theme.fn.smallerThan("md")]: {
-      width: "70%",
+      width: "45%",
       margin: "5% 0%",
+      height: "auto",
 
       transition: "scale ease-in-out 0.3s",
     },
@@ -58,6 +56,8 @@ export const useStyles = createStyles((theme) => ({
     padding: theme.spacing.xs,
     [theme.fn.smallerThan("md")]: {
       padding: "0% 20%",
+      marginTop: "30px",
+
     },
   },
   skillstext: {

@@ -45,7 +45,7 @@ export const UsersHome = () => {
         user.is_active && (
           user.full_name.startsWith(searchValue) ||
           user.email.startsWith(searchValue) || user.username.startsWith(searchValue) ? (
-            <UsersItem key={user._id} item={user} />
+            <UsersItem key={user.username} item={user} />
           ) : null
         ))}
       </div>

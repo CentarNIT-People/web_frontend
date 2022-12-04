@@ -5,6 +5,7 @@ import { data } from "./NavbarComponents/NavbarData";
 import { NavbarItem } from "./NavbarComponents/NavbarItem";
 import { useLocation } from "react-router-dom";
 import { IconPlus } from "@tabler/icons";
+import { SegmentedToggle } from "./ToggleTheme/SegmentedToggle";
 
 export function AppNavbar() {
     const { classes } = useStyles();
@@ -21,7 +22,8 @@ export function AppNavbar() {
 
     return (
         <Navbar width={{ sm: 250 }} className={classes.wrapper}>
-            <Navbar.Section grow>
+            <SegmentedToggle/>  
+            <Navbar.Section grow className={classes.items}>
                 {links}
             </Navbar.Section>
 

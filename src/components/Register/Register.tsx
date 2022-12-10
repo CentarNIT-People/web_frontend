@@ -22,11 +22,12 @@ export const Register = () => {
             status:"on hold",
             role: "Student",
             avatar: "string",
-            languages: ["string"],
+            languages: [],
             flag: "string",
             country: "string",
             city: "string",
             is_active: false,
+            courses: [],
         },
     });
 

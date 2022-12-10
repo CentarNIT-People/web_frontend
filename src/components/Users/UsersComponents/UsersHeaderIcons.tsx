@@ -34,7 +34,7 @@ export const UsersHeaderIcons = () => {
                     color: theme.colors.blue[4],
                     })}
                 >
-                    <item.icon size={18} />
+                    <item.icon size={20} />
                 </ActionIcon>
             })}
     </Group>    

@@ -26,10 +26,13 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     border:
       theme.colorScheme === "light"
         ? "1px solid #D3D3D3"
-        : `1px solid ${theme.colors.dark[5]}`,
+        : `1px solid ${theme.colors.dark[4]}`,
 
     borderRadius: "10px",
     position: "sticky",
+    '@media (max-width: 1290px)': {
+      width:"90%",
+    },
   },
   searchWrapper: {
     display: "flex",
@@ -70,7 +73,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     justifyContent: "space-between",
   },
   input: {
-    width: "90%",
+    width: "50%",
     marginLeft: "10px",
     marginRight:"10px",
     '@media (max-width: 800px)': {
@@ -93,6 +96,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
   headerIcons:{
     width:"50%",
     justifyContent:"space-evenly",
+    padding:"0px 1%",
     display:"flex",
     '@media (max-width: 800px)': {
       display:"none",

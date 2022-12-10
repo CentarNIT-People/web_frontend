@@ -102,15 +102,17 @@ export const Register = () => {
                     axios
                         .post("https://centarnit.deta.dev/users/", form.values)
                         .then((r) => {
-                            setSuccess(true)
-                            setTimeout(()=>{
-                                window.location.assign("/");
-                            },2000)
+                            console.log(r.status)
+                            if (r.status === 201) {
+                                setSuccess(true)
+                                setTimeout(()=>{
+                                    window.location.assign("/");
+                                },2000)
+                            }
+                            else{
+                                setSuccess(false)
+                            }
                         })
-                        .catch(()=>{
-                            setSuccess(false)
-                });
-
                 }}
 
             >
